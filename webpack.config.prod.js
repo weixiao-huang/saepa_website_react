@@ -1,10 +1,6 @@
-// import path from 'path';
-// import webpack from 'webpack';
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
-
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
   entry: {
@@ -14,11 +10,13 @@ module.exports = {
       'react-dom'
     ]
   },
+
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '',
     filename: 'bundle.js'
   },
+
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -27,16 +25,15 @@ module.exports = {
       }
     }),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      __DEV__: false
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     new HtmlWebpackPlugin({
+      template: './src/index.ejs',
       title: '产品模式',
       filename: 'index.html',
       favicon: './src/favicon.ico',
-      template: './src/template.html',
       inject: 'body',
       chunks: ['vendor', 'index'],
       hash: true,
@@ -55,10 +52,38 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        include: __dirname
+        loaders: ['babel'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        include: path.resolve(__dirname, 'src/js'),
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
+          'postcss?parser=postcss-scss'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        include: path.resolve(__dirname, 'src/styles'),
+        loader: 'style!css!postcss?parser=postcss-scss'
+      },
+      {
+        test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
+        loader: 'url?limit=10000'
+      },
+      {
+        test: /\.(gif|jpe?g|png|ico)$/,
+        loader: 'url?limit=10000'
       }
     ]
+  },
+  postcss: () => {
+    return [
+      require('precss'),
+      require('autoprefixer'),
+      require('rucksack-css')
+    ];
   }
 };
