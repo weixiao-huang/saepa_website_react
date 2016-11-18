@@ -47,7 +47,7 @@ $z-250: 250;
 $z-max: 999999; //为了应付某些插件z-index 值过高的问题
 
 // 页面尺寸
-$web-max-width: 750px !default;
+$web-max-width: 1920px !default;
 $web-min-width: 320px !default;
 
 // 全局设置
@@ -238,8 +238,8 @@ a {
 // 最外层页面设置
 .box {
   width: 100%;
-  //max-width: $web-max-width;
-  //min-width: $web-min-width;
+  max-width: $web-max-width;
+  min-width: $web-min-width;
   margin-left: auto;
   margin-right: auto;
 }

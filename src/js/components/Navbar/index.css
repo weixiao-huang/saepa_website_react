@@ -11,19 +11,20 @@
   transition: 0.5s;
   font-size: 16px;
   display: inline-block;
-  padding: 10px 10px; }
+  padding: 10px 10px;
+  border-bottom: 2px #aaa solid; }
 
 .common {
   composes: point;
   cursor: pointer; }
   .common:hover {
-    border-bottom: 1px #572A7B solid; }
+    border-bottom: 2px #572A7B solid; }
 
 .normal {
   composes: common; }
 
 .focus {
   composes: common;
-  border-bottom: 1px #572A7B solid; }
+  border-bottom: 2px #572A7B solid; }
 
 /*# sourceMappingURL=index.css.map */

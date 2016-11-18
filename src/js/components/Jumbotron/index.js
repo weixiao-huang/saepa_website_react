@@ -2,11 +2,17 @@
  * Created by huangwx on 16-11-17.
  */
 
-import React from 'react'
-import Images from './Images'
+import React, { Component } from 'react'
+import Image from './Images'
 
-export default () => (
-  <div className="mb20">
-    <Images />
-  </div>
-)
+class Jumbotron extends Component {
+  render() {
+    return (
+      <div className="mb20">
+        <Image />
+      </div>
+    )
+  }
+}
+
+export default Jumbotron

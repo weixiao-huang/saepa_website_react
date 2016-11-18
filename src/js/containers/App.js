@@ -21,15 +21,15 @@ export default class App extends Component {
       <div className="box">
         <Navbar items={states.navbars} />
         <Jumbotron />
-        <BigComponent />
-        <CommonTitle title="一个简单的按钮mixin示例" />
-        <CssTest />
-        <CommonTitle title="图片转换" />
-        <BigComponent />
-        <CommonTitle title="Animation示例，点击列表删除" />
-        <Animation />
-        <CommonTitle title="Tab示例" />
-        <Tab items={states.items} />
+        {/*<BigComponent />*/}
+        {/*<CommonTitle title="一个简单的按钮mixin示例" />*/}
+        {/*<CssTest />*/}
+        {/*<CommonTitle title="图片转换" />*/}
+        {/*<BigComponent />*/}
+        {/*<CommonTitle title="Animation示例，点击列表删除" />*/}
+        {/*<Animation />*/}
+        {/*<CommonTitle title="Tab示例" />*/}
+        {/*<Tab items={states.items} />*/}
       </div>
     )
   }

@@ -15,7 +15,7 @@ class Navbar extends Component {
     const { items } = this.props;
     const { focused } = this.state;
     return(
-      <div className={"mb20 text-center " + styles.navbar}>
+      <div className={"text-center " + styles.navbar}>
         <ul className={styles.root}>
           {items.map((item, index) =>
             <span>
