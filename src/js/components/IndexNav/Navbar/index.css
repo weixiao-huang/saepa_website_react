@@ -27,4 +27,18 @@
   composes: common;
   border-bottom: 2px #572A7B solid; }
 
+.left_box {
+  background-color: #563d7c;
+  width: 80px;
+  height: 120px;
+  position: absolute;
+  left: 50px;
+  z-index: 1; }
+
+.right_img {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: 1; }
+
 /*# sourceMappingURL=index.css.map */

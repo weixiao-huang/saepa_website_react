@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from 'react'
-import Image from './Images'
+import Image from './Image'
 
 class Jumbotron extends Component {
   render() {

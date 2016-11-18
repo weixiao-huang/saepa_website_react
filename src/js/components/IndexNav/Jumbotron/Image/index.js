@@ -4,14 +4,9 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
 
-class Image extends Component {
-  state = {
-    style: {maxHeight: "500px"}
-  };
-
+export default class Image extends Component {
   render () {
     return <div className={styles.img}></div>
   }
 }
 
-export default Image

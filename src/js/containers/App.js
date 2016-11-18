@@ -5,22 +5,18 @@ import {
   CssTest,
   Tab,
   Animation,
-  Navbar,
-  Jumbotron
+  IndexNav
 } from '../components'
 
 export default class App extends Component {
   state = {
     items: ['webpack','react','babel','npm'],
-    navbars: ["主页", "项目介绍", "MOOC", "学方平台", "联系我们"]
   };
   render() {
-    const states = this.state;
 
     return (
       <div className="box">
-        <Navbar items={states.navbars} />
-        <Jumbotron />
+        <IndexNav />
         {/*<BigComponent />*/}
         {/*<CommonTitle title="一个简单的按钮mixin示例" />*/}
         {/*<CssTest />*/}
