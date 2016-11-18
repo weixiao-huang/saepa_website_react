@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.scss'
 
-const BigOne = () => {
+export default () => {
   return (
     <div>
       <h2 className={"font-size-16 mt10 " + styles.title}>
@@ -11,5 +11,3 @@ const BigOne = () => {
     </div>
   )
 };
-
-export default BigOne
