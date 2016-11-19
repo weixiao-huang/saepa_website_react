@@ -15,15 +15,10 @@ export default class Navbar extends Component {
     const { items } = this.props;
     const { focused } = this.state;
     return(
-      <div>
-        {/*<div className={styles.left_box}></div>*/}
-        {/*<div className={styles.right_img}>*/}
-          {/*<img src="../../../images/协会logo.jpg" alt="SAEPA Logo"/>*/}
-        {/*</div>*/}
-        <div className={"text-center " + styles.navbar}>
-          <ul className={styles.root}>
-              {items.map((item, index) =>
-                      <span>
+      <div className={"text-center " + styles.navbar}>
+        <ul className={styles.root}>
+          {items.map((item, index) =>
+            <span>
               <span className={styles.point}>&middot;</span>
               <span
                   key={index}
@@ -33,10 +28,9 @@ export default class Navbar extends Component {
                 {item}
               </span>
             </span>
-              )}
-            <span className={styles.point}>&middot;</span>
-          </ul>
-        </div>
+          )}
+          <span className={styles.point}>&middot;</span>
+        </ul>
       </div>
     )
   }
