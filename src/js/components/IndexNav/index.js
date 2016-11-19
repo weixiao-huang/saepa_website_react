@@ -12,7 +12,14 @@ export default class IndexNav extends Component {
     bars: ["主页", "项目介绍", "MOOC", "学方平台", "联系我们"],
     maxHeight: innerHeight,
     imgUrl: "../../../images/协会logo.jpg",
-    decShow: innerWidth > 1000
+    arrowBG: {
+      url: "../../../images/arrowbg.png",
+      width: 163,
+      height: 48
+    },
+    decShow: innerWidth > 1000,
+    navHeight: 66,
+    cutImg: (innerWidth / 16 * 9) > (innerHeight - 66)
   };
 
   onResize() {
@@ -20,6 +27,7 @@ export default class IndexNav extends Component {
       maxHeight: innerHeight,
       decShow: innerWidth > 1000
     });
+    // console.log(this.refs.navBar.clientHeight);
   };
 
   componentDidMount() {
@@ -37,11 +45,16 @@ export default class IndexNav extends Component {
         className={styles.container}
         style={{ maxHeight: states.maxHeight }}
       >
-        <div className={styles.left_box}></div>
-        <div className={styles.right_img}>
-          <img src={states.imgUrl} alt="SAEPA Logo"/>
-        </div>
-        <Navbar items={states.bars} />
+        {states.decShow ?
+          <div>
+            <div className={styles.left_box}></div>
+            <div className={styles.right_img}>
+                <img style={{height: states.navHeight}} src={states.imgUrl} alt="SAEPA Logo"/>
+            </div>
+          </div> :
+          null
+        }
+        <Navbar ref="navBar" items={states.bars} />
         <Jumbotron />
       </div>
     )
